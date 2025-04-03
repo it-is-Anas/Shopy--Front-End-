@@ -11,7 +11,6 @@ export default {
             });
             if(response.status === 200){
                 const latestProducts = response.data.products;
-                // console.log(token);
                 context.commit('refreshLatestProducts',latestProducts);
             }
             context.commit('closeLoadingPage');
@@ -50,7 +49,7 @@ export default {
                 headers: {Authorization: 'Bearer '+token}
             });
             if(response.status === 200){
-                console.log(response);
+
             }
             context.commit('closeLoadingPage');
         }catch(err){

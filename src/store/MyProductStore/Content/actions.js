@@ -42,7 +42,6 @@ export default {
         const ip = context.getters.ip.get;
         const token = context.getters.getToken;
         try{    
-            // console.log(ip);
             const response = await axios.get(ip,{
                 headers: {Authorization: 'Bearer '+ token}
             });

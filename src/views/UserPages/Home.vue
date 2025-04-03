@@ -7,7 +7,7 @@
                     <p  @click='changeTab(1)'  :class="{'active':tab===1}"  class="g-profile-page_tab ">Trends</p>
                     <p  @click='changeTab(2)'  :class="{active:tab===2}"  class="g-profile-page_tab ">New Products</p>
                 </div>
-                <span v-if="tab === 1" >
+                <span v-if="tab === 1" > 
                     <home-section-headline v-if="trendProducts.length" label="Trends Products :"  />
                     <div class="g-profile-page_product-box" >
                                 <home-product v-for="one in trendProducts" :key="one.id" 
@@ -18,6 +18,7 @@
                                     :qty="one.qty"
                                     :imgUrl="one.img_url"
                                     :brand="one.brand"
+                                    :favorated="one.favorated"
                                 />
                     </div>
                 </span>
@@ -32,6 +33,7 @@
                                     :qty="one.qty"
                                     :imgUrl="one.img_url"
                                     :brand="one.brand"
+                                    :favorated="one.favorated"
                                 />
                     </div>
                 </span>
@@ -108,7 +110,8 @@ export default {
         const appLoader = ref(null);
         const homeLoadingPage = computed(()=> store.getters['homeProductStore/loadingPage']);
         const myProductLoadingPage = computed(()=> store.getters['myProductStore/loadingPage']);
-        const loadingPage = computed(()=> homeLoadingPage.value || myProductLoadingPage.value );
+        const favorateProductLoadingPage = computed(()=> store.getters['favorateProductsStore/loadingPage']);
+        const loadingPage = computed(()=> homeLoadingPage.value || myProductLoadingPage.value || favorateProductLoadingPage.value);
     
 
         watch(loadingPage,(val)=>{

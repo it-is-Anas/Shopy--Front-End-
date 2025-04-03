@@ -25,7 +25,6 @@ export default {
             const response = await axios.get(ip,{
                 headers: {Authorization: 'Bearer '+token},
             });
-            console.log(response.data);
             if(response.status ===200){
                 context.commit('setCartProducts',response.data);
             }
@@ -76,7 +75,6 @@ export default {
                 headers: {Authorization: 'Bearer '+token},
             });
             if(response.status ===200){
-                console.log(response.data);
                 context.commit('clearCart');
             }
             context.commit('closeLoadingPage');
@@ -94,7 +92,6 @@ export default {
                 headers: {Authorization: 'Bearer '+token},
             });
             if(response.status ===201){
-                console.log(response.data);
                 context.commit('clearCart');
             }
             context.commit('closeLoadingPage');

@@ -10,7 +10,7 @@ export default {
         for(let i = 0 ; i < products.length ; ++i){
             if(products[i].id === product.id){
 
-            }else{
+            }else{ 
                 result.push(products[i]);
             }
         }
@@ -20,5 +20,7 @@ export default {
     },
     closeLoadingPage(state){
         state.loadingPage = false;
-    },
+    },updateHomeProduct(state,payload,s){
+        console.log(state,payload,s)
+    }
 };

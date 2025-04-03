@@ -7,7 +7,7 @@
         <h4 class="home-product_desc" >{{ desc }}</h4>
         <div class="home-product_footer">
             <p class="home-product_price">{{ price }}$</p>
-            <i class="fa fa-heart home-product_save-btn" @click="addToFavorate()" ></i>
+            <i class="fa fa-heart home-product_save-btn" :class="[{'favorated':favorated}]" @click="addToFavorate()" ></i>
             <p class="home-product_add-to-cart" @click="addToCart" >add to cart</p>
         </div>
     </div>
@@ -31,7 +31,12 @@ export default {
             default: '0',
         },id:{
             default: null,
-        },imgUrl:{},
+        },imgUrl:{
+
+        },favorated:{
+            type: Boolean,
+            default: false
+        }
     },setup(props,){
         const store = useStore();
         function addToFavorate(){
