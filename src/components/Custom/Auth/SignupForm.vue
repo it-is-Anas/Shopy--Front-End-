@@ -125,8 +125,10 @@
                 },
 
             });
-            const hasNameLength = helpers.withMessage('Field must be exactly 3 digits long (less 10 number).', value =>
-                value?.length >= 3 && value?.length <= 10
+            const hasNameLength = helpers.withMessage('Field must be exactly 3 digits long (less 10 number).', value =>{
+                const regex = /^[a-zA-Z]{3,9}$/;
+                return regex.test(value)//(value?.length >= 3 && value?.length <= 10);
+            }
             );
             const hasGoodPassword = helpers.withMessage('Password has to be nimuric and between 8 to 20 nimuric .', value =>
                 value?.length >= 8 && value?.length <= 20 && /^[0-9]+$/.test(value)
