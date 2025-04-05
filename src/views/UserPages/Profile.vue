@@ -110,8 +110,6 @@ export default {
             formData.append("image", img.value);
             store.dispatch('authStore/updateProfilePicture',formData);
         };
-        watch(myProduct,v=>console.log(v));
-
         const mySales = computed(()=>store.getters['authStore/getMySalles']);
 
         return{
