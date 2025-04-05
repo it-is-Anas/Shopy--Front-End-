@@ -349,6 +349,15 @@ i{
     margin-right: 1.3em;
     margin-bottom: 1em;
 }
+.g-product-pop-up_btn-box.err{
+    justify-content: center;
+}
+.g-product-pop-up_err-text{
+    font-size: .9em;
+    color: var(--solid-pink);
+    font-weight: bold;
+    text-align: center;
+}
 
 .g-profile-body{
     color: var(--solid-purple);
@@ -652,6 +661,7 @@ i{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        overflow-x: hidden;
     }
     .g-notification-menu{
         width: 100dvw;
