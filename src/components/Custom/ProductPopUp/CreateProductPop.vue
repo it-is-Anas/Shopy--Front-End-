@@ -49,7 +49,7 @@ import { helpers, required , numeric } from '@vuelidate/validators';
 export default {
     setup(){
         const store = useStore();
-        const openProductPopUp = ref(1);
+        const openProductPopUp = ref(false);
 
 
 
