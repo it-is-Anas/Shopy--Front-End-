@@ -233,7 +233,7 @@ i{
     flex-direction: column;
     padding: 1em;
     z-index: 1000;
-    transition: 1s all ;
+    transition: 1.3s all ;
 }
 .g-menu-header_icon{
     width: 2em;
