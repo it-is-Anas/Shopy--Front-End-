@@ -464,6 +464,21 @@ i{
     bottom: 1em;
     left: 7.5em;
 }
+.g-profile-page_btn-box{
+    /* background-color: red; */
+    width: 50%;
+    height: 3em;
+    position: absolute;
+    bottom: 1em;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.g-profile_btn-frst{
+
+}
 .g-profile-page_filter-bar{
     width: 95%;
     overflow-x: scroll;

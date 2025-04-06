@@ -21,6 +21,9 @@
                     </transition>
                     </div>
                     <p class="g-profile-page_user-name">{{ profile.firstName }} {{ profile.lastName }}</p>
+                    <div class="g-profile-page_btn-box">
+                        <btn :label="'Edit'" class="g-profile_btn-frst" />
+                    </div>
                 </div> 
                 <div class="g-profile-page_filter-bar">
                     <!-- <p  @click='changeTab(1)'  :class="{active:tab===1}"  class="g-profile-page_tab ">Info</p> -->
@@ -50,11 +53,13 @@ import ProfileProduct from '@/components/Custom/Product/ProfileProduct.vue';
 import ProfileProductSell from '@/components/Custom/ProductSell/ProfileProductSell.vue';
 import { useStore } from 'vuex'; 
 import axios from 'axios';
+import btn from '@/components/Custom/Buttons/AuthFormBtn.vue';
 export default {
     components:{
         AppHeader,
         ProfileProduct,
         ProfileProductSell,
+        btn,
     },
     setup(){
         const store = useStore();
