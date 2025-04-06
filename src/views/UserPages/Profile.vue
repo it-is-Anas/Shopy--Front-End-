@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div class="page user-home">
         <div class="page_container user-home_container">
             <app-header :active="'profile'" />
@@ -22,7 +22,7 @@
                     </div>
                     <p class="g-profile-page_user-name">{{ profile.firstName }} {{ profile.lastName }}</p>
                     <div class="g-profile-page_btn-box">
-                        <btn :label="'Edit'" class="g-profile_btn-frst" />
+                        <btn :label="'Edit'" @click="openProfilePopUp" class="g-profile_btn-frst" />
                     </div>
                 </div> 
                 <div class="g-profile-page_filter-bar">
@@ -43,7 +43,7 @@
         </div>
         <input style="display: none;" ref="picUploader" type="file" @change="handleFileUpload" />
     </div>
-    <ProfilePopUp />
+    <ProfilePopUp ref="profilePopUp" />
     <app-loader ref="appLoader" />
     <app-msg ref="appMsg" />
 </template>
@@ -135,6 +135,12 @@ export default {
         function closeProfileContextMenu(){
             profileContextMenu.value = false;
         }
+
+
+        const profilePopUp = ref(null);
+        function openProfilePopUp(){
+            profilePopUp.value.open()
+        }
         return{ 
             appMsg,
             tab,
@@ -148,7 +154,9 @@ export default {
             mySales,
             profileContextMenu,
             openProfileContextMenu,
-            closeProfileContextMenu
+            closeProfileContextMenu,
+            profilePopUp,
+            openProfilePopUp,
         };
     },
 }
