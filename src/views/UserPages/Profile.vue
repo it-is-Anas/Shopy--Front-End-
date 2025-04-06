@@ -43,6 +43,7 @@
         </div>
         <input style="display: none;" ref="picUploader" type="file" @change="handleFileUpload" />
     </div>
+    <ProfilePopUp />
     <app-loader ref="appLoader" />
     <app-msg ref="appMsg" />
 </template>
@@ -54,12 +55,14 @@ import ProfileProductSell from '@/components/Custom/ProductSell/ProfileProductSe
 import { useStore } from 'vuex'; 
 import axios from 'axios';
 import btn from '@/components/Custom/Buttons/AuthFormBtn.vue';
+import ProfilePopUp from '@/components/Custom/ProfilePopUp/ProfilePopUp.vue';
 export default {
     components:{
         AppHeader,
         ProfileProduct,
         ProfileProductSell,
         btn,
+        ProfilePopUp,
     },
     setup(){
         const store = useStore();
