@@ -397,6 +397,37 @@ i{
     place-content: center;
     cursor: pointer;
 }
+.g-profile-page-profile-box_context-menu{
+    width: 9em;
+    min-height: 2em;
+    background-color: var(--light-gray);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    border-radius: 10px;
+    max-height: 8em;
+    overflow: hidden;
+    padding: .2em 0;
+    background: var(--light-gray);
+    box-shadow: 0px 0px 5px 0px var(--solid-purple);
+}
+.g-profile-page-profile-box-context-menu_btn{
+    /* width: 8.2em;
+    height: 1.8em; */
+    padding: .2em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: .2em ;
+    text-align: center;
+    cursor: pointer;
+    background: var(--light-pink);
+    color: var(--white);
+    background: var(--solid-pink);
+    color: var(--white);
+}
+
 .g-profile-page_profile-picture{
     width: 10em;
     height: 10em;

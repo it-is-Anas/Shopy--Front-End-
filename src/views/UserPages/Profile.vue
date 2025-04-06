@@ -7,10 +7,18 @@
                     <img src="../../assets/User/Cover.jpeg" alt="" class="g-profile-page_cover" />
                     <div  class="g-profile-page-profile_box" >
                         <div  class="g-profile-page-profile-box_content" >
-                            <img @click="picUploader.click()" v-if="profile.imgUrl" :src="backIp+profile.imgUrl"  alt="" class="g-profile-page_profile-picture" />
-                            <img @click="picUploader.click()" v-else src="../../assets/User/Profile.png"  alt="" class="g-profile-page_profile-picture" />
-                            <p @click="picUploader.click()" class="g-profile-page-profile-picture_hover"> Click to upload a picture </p>
-                        </div> 
+                            <img @contextmenu.prevent="openProfileContextMenu" v-if="profile.imgUrl" :src="backIp+profile.imgUrl"  alt="" class="g-profile-page_profile-picture" />
+                            <img @contextmenu.prevent="openProfileContextMenu" v-else src="../../assets/User/Profile.png"  alt="" class="g-profile-page_profile-picture" />                        
+                    </div>
+                    <transition name="fade" >                    
+                        <div class="g-profile-page-profile-box_context-menu" v-if="profileContextMenu" >
+                            <p class="g-profile-page-profile-box-context-menu_btn">Open</p>    
+                            <p @click="picUploader.click()" class="g-profile-page-profile-box-context-menu_btn">Upload</p>    
+                        </div>
+                    </transition>
+                    <transition name="fade" >                                            
+                        <div @click="closeProfileContextMenu" v-if="profileContextMenu" class="g-bk bk-notfication g-bk-product"></div>
+                    </transition>
                     </div>
                     <p class="g-profile-page_user-name">{{ profile.firstName }} {{ profile.lastName }}</p>
                 </div> 
@@ -112,7 +120,14 @@ export default {
         };
         const mySales = computed(()=>store.getters['authStore/getMySalles']);
 
-        return{
+        const profileContextMenu = ref(false);
+        function openProfileContextMenu(){
+            profileContextMenu.value = true;
+        }
+        function closeProfileContextMenu(){
+            profileContextMenu.value = false;
+        }
+        return{ 
             appMsg,
             tab,
             changeTab,
@@ -123,6 +138,9 @@ export default {
             handleFileUpload,
             backIp,
             mySales,
+            profileContextMenu,
+            openProfileContextMenu,
+            closeProfileContextMenu
         };
     },
 }
