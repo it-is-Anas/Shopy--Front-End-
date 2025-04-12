@@ -22,6 +22,9 @@
 import btn from '@/components/Custom/Buttons/AuthFormBtn.vue';
 import { ref } from 'vue';
 export default {
+    props:{
+        
+    },
     components:{
         btn,
     },setup(){
