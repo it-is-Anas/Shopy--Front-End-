@@ -11,6 +11,9 @@ import User_Home from './Style/User_Home.css'
 import Animation from './Style/Animation.css'
 
 
+import './Style/Admin/MainStyle.css';
+
+
 import AppLoader from './components/Global/AppLoader.vue';
 import AppMsg from './components/Global/AppMsg.vue';
 
