@@ -9,6 +9,10 @@
 
 }
 
+.admin-page a{
+    color: var(--admin-bold-blue);
+    text-decoration: none   ;
+}
 .admin-page{
     display: grid;
     grid-template-columns: 50px auto;
