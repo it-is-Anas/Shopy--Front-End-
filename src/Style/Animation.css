@@ -36,3 +36,23 @@
 .fade-leave-to{
     opacity: 0;
 }
+/* ==================== */
+.left-slide-enter-from{
+    transform: translate(-200%,0);
+}
+.left-slide-enter-active{
+    transform: translate(-200%,0);
+    transition: 1s all;
+}
+.left-slide-enter-to{
+    transform: translate(0%,0);
+}
+.left-slide-leave-from{
+    transform: translate(0%,0);
+}
+.left-slide-leave-active{
+    transition: 1s all;
+}
+.left-slide-leave-to{
+    transform: translate(-200%,0);
+}
