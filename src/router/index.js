@@ -9,7 +9,14 @@ const routes = [
   {path: '/favorate', component: import('@/views/UserPages/Favorate.vue')},
   {path: '/cart', component: import('@/views/UserPages/Cart.vue')},
   {path: '/order', component: import('@/views/UserPages/Order.vue')},
-  {path: '/admin' , component: import('@/views/Admin/Admin.vue')},
+  {path: '/admin' , component: import('@/views/Admin/Admin.vue') ,
+    children:[
+      {path:'' , component: import('@/views/Admin/Childreens/AdminHome.vue')},
+      {path:'users' , component: import('@/views/Admin/Childreens/AdminUsers.vue')},
+      {path:'notifications' , component: import('@/views/Admin/Childreens/AdminNoti.vue')},
+      {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},
+    ]
+  },
   {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') },
   {path: '/err-not-found', component: import('@/views/System/Error404.vue') },
   { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },

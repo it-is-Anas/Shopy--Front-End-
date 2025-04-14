@@ -28,7 +28,7 @@
                     <img class="admin-aside_chat-img" src="../../assets/System/Admin/users.png" alt="">
                     <p class="admin-aside_chat-text" > users </p>
                 </router-link>
-                <router-link to="/admin/notification" class="admin-aside_list-chat">
+                <router-link to="/admin/notifications" class="admin-aside_list-chat">
                     <img class="admin-aside_chat-img" src="../../assets/System/Admin/notii.png" alt="">
                     <p class="admin-aside_chat-text" > Notifications </p>
                 </router-link>

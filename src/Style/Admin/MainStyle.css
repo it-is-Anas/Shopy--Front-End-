@@ -99,14 +99,50 @@
     font-weight: 600;
 }
 
-
-.admin-header{
-
-}
-
 .admin-work_space{
     grid-row: 2/3;
 }
+
+
+.admin-header{
+    display: flex;
+    align-items: center;
+    background: var(--admin-light-blue);
+    padding: .5em;
+    justify-content: flex-start;
+}
+
+.admin-header-logo{
+    color: var(--admin-bold-blue);
+}
+
+/* ========== */
+.admin-home{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.admin-users{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+.admin-noti{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+.admin-info{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+}
+
 
 
 @media (min-width: 1000px) {

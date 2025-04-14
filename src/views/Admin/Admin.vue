@@ -3,7 +3,11 @@
         <admin-header  />
         <admin-aside  />
         <div class="admin-work_space">
-            
+            <router-view v-slot="slotProps" >
+                <transition-group name="fade" mode="out-in" >
+                    <component :is="slotProps.Component"></component>
+                </transition-group>
+            </router-view>
         </div>
     </div>
 </template>
