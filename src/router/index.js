@@ -11,7 +11,7 @@ const routes = [
   {path: '/order', component: import('@/views/UserPages/Order.vue')},
   {path: '/admin' , component: import('@/views/Admin/Admin.vue') ,
     children:[
-      {path:'' , component: import('@/views/Admin/Childreens/AdminHome.vue')},
+      {path:'home' , component: import('@/views/Admin/Childreens/AdminHome.vue')},
       {path:'users' , component: import('@/views/Admin/Childreens/AdminUsers.vue')},
       {path:'notifications' , component: import('@/views/Admin/Childreens/AdminNoti.vue')},
       {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},

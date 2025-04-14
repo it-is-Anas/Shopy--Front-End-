@@ -40,11 +40,14 @@
     height: 2em;
     margin: 10px auto;
     cursor: pointer;
+    transition: .5s .5s all ease;
 }
-.admin-aside_btn.active{
+
+a.router-link-active  > .admin-aside_btn{
     background: var(--admin-white);
-    margin-top: 1em;
+    /* margin-top: 1em; */
     border-radius: .2em;
+    
 }
 .admin-aside_btn.last{
     margin-top: auto;
@@ -83,10 +86,11 @@
 }
 .admin-aside_list-chat.last{
     margin-top: auto;
+    margin-bottom: .5em;
 }
-.admin-aside_list-chat.active{
+a.router-link-active.admin-aside_list-chat{
     background: var(--admin-white);
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 .admin-aside_chat-img{
     width: 2em;
