@@ -11,7 +11,8 @@ const routes = [
   {path: '/order', component: import('@/views/UserPages/Order.vue')},
   {path: '/admin' , component: import('@/views/Admin/Admin.vue') ,
     children:[
-      {path:'home' , component: import('@/views/Admin/Childreens/AdminHome.vue')},
+      {path:'home-users' , component: import('@/views/Admin/Childreens/AdminHomeUsers.vue')},
+      {path:'home-products' , component: import('@/views/Admin/Childreens/AdminHomeProduct.vue')},
       {path:'users' , component: import('@/views/Admin/Childreens/AdminUsers.vue')},
       {path:'notifications' , component: import('@/views/Admin/Childreens/AdminNoti.vue')},
       {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},
@@ -19,7 +20,7 @@ const routes = [
   },
   {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') },
   {path: '/err-not-found', component: import('@/views/System/Error404.vue') },
-  { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },
+  // { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },
 ]
 
 const router = createRouter({

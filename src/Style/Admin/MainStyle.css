@@ -105,6 +105,8 @@ a.router-link-active.admin-aside_list-chat{
 
 .admin-work_space{
     grid-row: 2/3;
+    overflow-y : scroll;
+    overflow-x: hidden;
 }
 
 
@@ -120,31 +122,270 @@ a.router-link-active.admin-aside_list-chat{
     color: var(--admin-bold-blue);
 }
 
-/* ========== */
+/* ========== */ 
+.admin-section-title{
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1em;
+    color: var(--admin-bold-blue);
+}
 .admin-home{
     width: 100%;
     height: 100%;
-    background-color: red;
-    overflow-y: scroll;
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
 }
+.admin-fliter-box{
+    width: 100%;
+    height: 3em;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.admin-fliter-box-element{
+    background: var(--admin-white);
+    padding: .2em .5em;
+    border-radius: 5px;
+    color: var(--admin-blue);
+    margin: 0 .5em;
+    font-size: .8em;
+    font-weight: 600;
+    border: 2px solid var(--admin-blue);
+    cursor: pointer;
+    list-style: none;
+}
+a.router-link-active.admin-fliter-box-element{
+    padding: .3em   .5em;
+    background: var(--admin-blue);
+    color: var(--admin-white);
+    font-weight: bold;
+    border: none;
+}
+.admin-charts-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+.admin-charts-section > .col{
+    width: 100%;
+    height: auto;
+}
+.admin-charts-section > .col:first-of-type{
+
+}
+.admin-charts-section > .col:last-of-type{
+
+}
+
+.admin-chart{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+    justify-content: flex-start;
+}
+.admin-chart-title{
+    color: var(--admin-bold-blue);
+}
+.admin-the-chart{
+    width: 22em;
+    height: 15em;
+    background-color: var(--admin-white);
+    margin: 1em auto;
+    border-radius: .3em;
+    display: flex
+;
+    justify-content: flex-start;
+    overflow-x: scroll;
+}
+.chart-ruler{
+    height: 100%;
+    width: 1.3em;
+    min-width: .9em;
+    color: var(--admin-bold-blue);
+    padding: .2em;
+    padding-bottom: 1em;
+    position: relative;
+    border-left: 3px solid var(--admin-bold-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.chart-column{
+    width: 3em;
+    min-width: 2.3em;
+    height: 100%;
+    margin-left: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.chart-ruler-number{
+    font-size: .8em;
+}
+.chart-column-the-column{
+    width: 75%;
+    background-color: var(--admin-light-blue);
+    height: 60%;
+    margin-top: auto;
+    margin-bottom: .3em;
+    border-radius: 5px;
+}
+.chart-column-label{
+    margin-bottom: .3em;
+    color: var(--admin-bold-blue);
+    font-weight: bold;
+    color: var(--admin-light-blue);
+}
+.chart-column-the-column.low{
+    background: var(--admin-orange);
+}
+.chart-column-the-column.height{
+    background: var(--admin-blue);
+}
+.chart-column-label.low{
+    color: var(--admin-orange);
+}
+.chart-column-label.height{
+    color: var(--admin-blue);
+}
+
+
+
+/* ================ */
+
+.admin-users-display{
+    /* width: 100em; */
+    /* height: 30em; */
+}
+
+.admin-user-card{
+    background-color: var(--admin-white);
+    margin: 0 auto;
+    width: 80%;
+    height: 5em;
+    margin: 1em auto;
+    border-radius: 10px;
+    min-width: 20em;
+    display: flex
+    ;
+    align-items: center;
+    justify-content: flex-start;
+    padding: .5em;
+    position: relative;
+}
+
+.admin-user-card-check-box{
+    border: none;
+}
+
+.admin-user-card-profile-pic{
+    width: 3em;
+    height: 3em;
+    border-radius: 7px;
+    margin: .5em;
+}
+
+.admin-user-card-user-info{
+
+}
+
+.admin-user-card-name{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.admin-user-card-rank{
+    font-size: .8em;
+    color: var(--admin-bold-blue);
+}
+
+.admin-user-card-block{
+    color: var(--admin-bold-blue);
+    font-size: .8em;
+}
+
+.admin-user-card-join-date{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: .8em;
+    margin: .5em;
+    color: var(--admin-bold-gray);
+}
+
+
+.admin-user-card-menu-icon{
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: .5em;
+}
+
+/* =================== */
+.admin-product-display{
+    display: flex
+    ;
+        flex-wrap: wrap;
+        padding: 1em;
+        align-items: center;
+        justify-content:  space-around;
+}
+.admin-product-card{
+    background-color: var(--admin-white);
+    /* width: 11em;
+    height: 15em; */
+    /* padding: .3em; */
+    margin: .6em .3em;
+    width: 13em;
+    border-radius: 5px;
+    padding: .5em .3em;
+}
+.admin-product-card-img{
+    /* width: 10em; */
+    width: 12.4em;
+    height: 8em;
+}
+.admin-product-card-user-name{
+    font-size: .8em;
+    font-weight: 500;
+}
+.admin-product-card-product-name{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: .2em 0;
+}
+.admin-product-card-product-desc{
+    font-size: .8em;
+    font-weight: 500;
+}
+.admin-product-card-product-date{
+    font-size: .6em;
+    text-align: right;
+    padding: .2em 0;
+}
+
+
+
+/* =================== */
 
 .admin-users{
     width: 100%;
     height: 100%;
-    background-color: blue;
 }
 .admin-noti{
     width: 100%;
     height: 100%;
-    background-color: green;
 }
 .admin-info{
     width: 100%;
     height: 100%;
-    background-color: yellow;
 }
 
 
@@ -160,6 +401,10 @@ a.router-link-active.admin-aside_list-chat{
 @media (max-width: 767px) {
     .admin-page{
         font-size: 14px;
+    }
+    .admin-charts-section{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
     }
 }
 @media (max-width: 550px) {
