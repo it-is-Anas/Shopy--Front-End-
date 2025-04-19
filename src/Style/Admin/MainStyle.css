@@ -155,6 +155,7 @@ a.router-link-active.admin-aside_list-chat{
     cursor: pointer;
     list-style: none;
 }
+.active.admin-fliter-box-element,
 a.router-link-active.admin-fliter-box-element{
     padding: .3em   .5em;
     background: var(--admin-blue);
@@ -266,7 +267,7 @@ a.router-link-active.admin-fliter-box-element{
 .admin-user-card{
     background-color: var(--admin-white);
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     height: 5em;
     margin: 1em auto;
     border-radius: 10px;
@@ -312,8 +313,8 @@ a.router-link-active.admin-fliter-box-element{
 .admin-user-card-join-date{
     position: absolute;
     right: 0;
-    bottom: 0;
-    font-size: .8em;
+    top: 0%;
+    font-size: .6em;
     margin: .5em;
     color: var(--admin-bold-gray);
 }
@@ -323,9 +324,39 @@ a.router-link-active.admin-fliter-box-element{
     width: 1em;
     height: 1em;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -1%;
+    bottom: 0;
     margin: .5em;
+    cursor: pointer;
+}
+
+.admin-user-card-btn-box{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0.4em;
+    right: 0;
+}
+
+.admin-user-card-context-menu{
+    position: absolute;
+    background-color: var(--admin-light-blue);
+    min-width: 5em;
+    min-height: 1em;
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+    padding: .2em;
+    text-align: center;
+}
+.admin-user-card-context-menu_element{
+    background: var(--admin-blue);
+    padding: .5em;
+    color: var(--admin-white);
+    font-weight: bold;
+    border-radius: .2em;
+    font-size: .7em;
+    margin: .2em 0;
 }
 
 /* =================== */
@@ -373,12 +404,18 @@ a.router-link-active.admin-fliter-box-element{
 
 
 
-/* =================== */
+
+
 
 .admin-users{
     width: 100%;
     height: 100%;
 }
+
+
+
+
+/* =================== */
 .admin-noti{
     width: 100%;
     height: 100%;

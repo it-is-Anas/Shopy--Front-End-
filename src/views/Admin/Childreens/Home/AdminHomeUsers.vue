@@ -5,22 +5,21 @@
             <Chart class="col" :chartTitle="'Users registertions :'" :ruler="rulerOne" :charts="chartsOne" />
             <Chart class="col" :chartTitle="'Sells :'" :ruler="rulerOne" :charts="chartsOne" />
         </div>
-        <h4 class="admin-section-title" >Products :</h4>
-        <div class="admin-users-display admin-product-display">
-            <productCard v-for="one in 100" :key="one" />
+        <div class="admin-users-display">
+            <h4 class="admin-section-title" >Users :</h4>
+            <UserCard  v-for="one in 100" :key="one" />
         </div>
     </div>
 </template>
 <script>
 import Chart from '@/components/Admin/Chart/Chart.vue';
-import productCard from '@/components/Admin/ProductCard/ProductCard.vue';
-import Links from '@/components/Admin/Links/AdminHome.vue';
-
+import UserCard from '@/components/Admin/UsersCard/UserCard.vue';
+import Links from '@/components/Admin/Links/AdminHomeLinks.vue';
 export default {
     components:{
         Chart,
-        productCard,
-        Links
+        UserCard,
+        Links,
     },data(){
         return {
             rulerOne:{

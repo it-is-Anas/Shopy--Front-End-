@@ -11,10 +11,12 @@ const routes = [
   {path: '/order', component: import('@/views/UserPages/Order.vue')},
   {path: '/admin' , component: import('@/views/Admin/Admin.vue') ,
     children:[
-      {path:'home-users' , component: import('@/views/Admin/Childreens/AdminHomeUsers.vue')},
-      {path:'home-products' , component: import('@/views/Admin/Childreens/AdminHomeProduct.vue')},
-      {path:'users' , component: import('@/views/Admin/Childreens/AdminUsers.vue')},
-      {path:'notifications' , component: import('@/views/Admin/Childreens/AdminNoti.vue')},
+      {path:'home-users' , component: import('@/views/Admin/Childreens/Home/AdminHomeUsers.vue')},
+      {path:'home-products' , component: import('@/views/Admin/Childreens/Home/AdminHomeProduct.vue')},
+      {path:'users' , component: import('@/views/Admin/Childreens/Users/AdminUsers.vue')},
+      {path:'users/blocking' , component: import('@/views/Admin/Childreens/Users/AdminUsersBlocking.vue')},
+      {path:'users/admins' , component: import('@/views/Admin/Childreens/Users/AdminUsersAdmins.vue')},
+      {path:'notifications' , component: import('@/views/Admin/Childreens/Notifications/AdminNoti.vue')},
       {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},
     ]
   },

@@ -7,7 +7,7 @@
         <router-link v-else  class="admin-aside_btn " to="/admin/home-users" >
             <img class="admin-aside_btn  " src="../../assets/System/Admin/home.png" alt="">
         </router-link>
-        <router-link class="admin-aside_btn" to="/admin/users" >
+        <router-link class="admin-aside_btn"  to="/admin/users" >
             <img class="admin-aside_btn" src="../../assets/System/Admin/users.png" alt="">
         </router-link>
         <router-link class="admin-aside_btn" to="/admin/notifications" >
@@ -61,7 +61,7 @@ export default {
             this.list = !true;
         },
     },mounted(){
-
+        this.userRoute;
     },computed: {
         routePath(){
             return this.$route.fullPath;
