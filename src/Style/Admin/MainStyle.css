@@ -257,7 +257,6 @@ a.router-link-active.admin-fliter-box-element{
 
 
 
-/* ================ */
 
 .admin-users-display{
     /* width: 100em; */
@@ -419,7 +418,99 @@ a.router-link-active.admin-fliter-box-element{
 .admin-noti{
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
 }
+.admin-noti > .col{
+    width: 100%;
+    height: 100%;
+}
+.admin-noti-head-line{
+    padding: .5em;
+    font-weight: bold;
+    color: var(--admin-bold-gray);
+}
+.admin-noti-prev-noti-box{
+    width: 100%;
+    min-height: 1em;
+}
+
+.admin-noti_col-one{
+    overflow-y: scroll;
+}
+.admin-noti_col-two{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.admin-noti-input-box{
+    background: var(--admin-white);
+    border: none;
+    outline: none;
+    width: 25em;
+    height: 19em;
+    margin:1em auto ;
+    resize: none;
+    border-radius: 7px;
+    padding: .5em;
+}
+.admin-noti-btn-box{
+    width: 100%;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 23em;
+    margin: 0 auto;
+}
+/* ================ */
+.admin-notification-card{
+    max-width: 25em;
+    width: 95%;
+    height: 5em;
+    background-color: var(--admin-white);
+    border-radius: 10px;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5em;
+    position: relative;
+}
+.admin-notification-card-img{
+    width: 4em;
+    height: 4em;
+    border-radius: 5px;
+}
+
+.admin-notification-card-name{
+    padding: 0 .3em;
+    font-size: 1.1em;
+    color: var(--admin-blue);
+}
+
+.admin-notification-card-content{
+    font-size: .7em;
+    font-weight: 400;
+    padding: .5em;
+    width: 26em;
+    height: 4.5em;
+}
+.admin-notification-card-date{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .5em;
+    font-weight: bold;
+    color: var(--admin-light-gray);
+    padding: 1em;
+}
+
+/* ================ */
+
 .admin-info{
     width: 100%;
     height: 100%;
@@ -442,6 +533,19 @@ a.router-link-active.admin-fliter-box-element{
     .admin-charts-section{
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
+    }
+    .admin-noti{
+        grid-template-columns: 100%;
+        grid-template-rows: 100% 100%;
+    }
+    .admin-noti_col-one{
+        
+    }
+    .admin-noti_col-two{
+        grid-row: 1/2;
+    }
+    .admin-noti_col-one{
+        overflow: initial;
     }
 }
 @media (max-width: 550px) {
