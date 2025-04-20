@@ -13,6 +13,7 @@ export default function state(){
         token: '',
         logged: false,
         mySalles:[],
+        isAdmin: false,
     };
 };
 

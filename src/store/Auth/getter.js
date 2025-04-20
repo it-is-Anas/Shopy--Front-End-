@@ -24,18 +24,21 @@ export default {
             birth_day: state.birthDay,
             gender: state.gender,
             password: state.password,
+            isAdmin: state.isAdmin,
         };
     },
     getProfile(state){
-        return{
-            firstName: state.firstName,
-            lastName: state.lastName,
-            email: state.email,
-            birthDay: state.birthDay,
-            gender: state.gender,
-            id: state.id,
-            imgUrl: state.imgUrl,
-        };
+        console.log('sss');
+        return state;
+        // return{
+        //     firstName: state.firstName,
+        //     lastName: state.lastName,
+        //     email: state.email,
+        //     birthDay: state.birthDay,
+        //     gender: state.gender,
+        //     id: state.id,
+        //     imgUrl: state.imgUrl,
+        // };
     },
     getToken(state){
         return{

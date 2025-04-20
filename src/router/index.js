@@ -18,10 +18,25 @@ const routes = [
       {path:'users/admins' , component: import('@/views/Admin/Childreens/Users/AdminUsersAdmins.vue')},
       {path:'notifications' , component: import('@/views/Admin/Childreens/Notifications/AdminNoti.vue')},
       {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},
-    ]
+    ],
+      beforeEnter  (to, from, next) {
+        next();
+        // const store = useStore();
+        // store.commit('authStore/getTokenLocal');
+        // const token = store['getters']['authStore/getToken'].token;
+        // if(!token.length){
+        //   next({name:'notAuth'});
+        // }
+        // const isAdmin = store['getters']['authStore/getProfile'];
+        // console.log(isAdmin);
+        // if(!isAdmin){
+        //   next({name:'notFound'});
+        // }
+        // next();
+    }
   },
-  {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') },
-  {path: '/err-not-found', component: import('@/views/System/Error404.vue') },
+  {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') , name:'notAuth' },
+  {path: '/err-not-found', component: import('@/views/System/Error404.vue'),name:'notFound' },
   { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },
 ]
 

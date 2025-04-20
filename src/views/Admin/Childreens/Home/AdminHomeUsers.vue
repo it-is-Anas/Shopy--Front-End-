@@ -57,7 +57,7 @@ export default {
                     id: 0 ,
                     label: 'Tus',
                     prec: 80
-                },
+                }, 
                 {
                     id: 0 ,
                     label: 'wed',

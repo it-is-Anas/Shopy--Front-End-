@@ -30,6 +30,7 @@ export default {
         state.gender = payload.gender  ;
         state.id = payload.id  ;
         state.imgUrl = payload.img_url  ;
+        state.isAdmin = payload.isAdmin  ;
     }
     ,updateLocalDateLogIn(state,payload){
         state.email = payload.email;
