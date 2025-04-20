@@ -22,7 +22,7 @@ const routes = [
   },
   {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') },
   {path: '/err-not-found', component: import('@/views/System/Error404.vue') },
-  // { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },
+  { path: '/:pathMatch(.*)*', redirect: '/err-not-found' },
 ]
 
 const router = createRouter({
