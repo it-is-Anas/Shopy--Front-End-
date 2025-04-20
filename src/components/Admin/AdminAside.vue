@@ -1,5 +1,5 @@
 <template>
-    <aside class="admin-aside" >
+    <aside class="admin-aside" > 
         <img @click="openList" class="admin-aside_btn " src="../../assets/System/Admin/Menu.png" alt="">
         <router-link v-if="routePath ==='/admin/home-products'" class="admin-aside_btn " to="/admin/home-products" >
             <img class="admin-aside_btn  " src="../../assets/System/Admin/home.png" alt="">
@@ -12,7 +12,7 @@
         </router-link>
         <router-link class="admin-aside_btn" to="/admin/notifications" >
             <img class="admin-aside_btn" src="../../assets/System/Admin/notii.png" alt="">
-        </router-link>
+        </router-link> 
         <router-link class="admin-aside_btn last" to="/admin/info" >
             <img class="admin-aside_btn last" src="../../assets/System/Admin/info.png" alt="">
         </router-link>
