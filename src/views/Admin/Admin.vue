@@ -18,7 +18,7 @@
         components:{
             AdminHeader,
             AdminAside,
-        }
+        },
     }
 </script>
- 
+    

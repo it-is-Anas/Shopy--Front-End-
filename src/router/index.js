@@ -19,20 +19,22 @@ const routes = [
       {path:'notifications' , component: import('@/views/Admin/Childreens/Notifications/AdminNoti.vue')},
       {path:'info' , component: import('@/views/Admin/Childreens/AdminInfo.vue')},
     ],
-      beforeEnter  (to, from, next) {
+    beforeEnter: async (to, from, next) => {
+        const store = useStore();
+        store.commit('authStore/getTokenLocal');
+        const token = store['getters']['authStore/getToken'].token;
+        if(!token.length){
+          next({name:'notAuth'});
+        }
+        let profile = store['getters']['authStore/getProfile'];
+        if(!profile.firstName.length && !profile.lastName.length&& !profile.email.length ){
+          await store.dispatch('authStore/getProfile');
+          profile = store['getters']['authStore/getProfile'];
+        }
+        if(!profile.isAdmin){
+          next({name: 'notFound'});
+        }
         next();
-        // const store = useStore();
-        // store.commit('authStore/getTokenLocal');
-        // const token = store['getters']['authStore/getToken'].token;
-        // if(!token.length){
-        //   next({name:'notAuth'});
-        // }
-        // const isAdmin = store['getters']['authStore/getProfile'];
-        // console.log(isAdmin);
-        // if(!isAdmin){
-        //   next({name:'notFound'});
-        // }
-        // next();
     }
   },
   {path: '/err-not-auth', component: import('@/views/System/NotAuthorized.vue') , name:'notAuth' },

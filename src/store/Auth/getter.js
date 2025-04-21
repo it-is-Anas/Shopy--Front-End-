@@ -28,7 +28,6 @@ export default {
         };
     },
     getProfile(state){
-        console.log('sss');
         return state;
         // return{
         //     firstName: state.firstName,
