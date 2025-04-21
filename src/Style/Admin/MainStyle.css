@@ -404,24 +404,32 @@ a.router-link-active.admin-fliter-box-element{
 .admin-user-card-context-menu{
     position: absolute;
     background-color: var(--admin-light-blue);
-    min-width: 5em;
+    min-width: 6em;
     min-height: 1em;
     right: 10px;
     top: 10px;
     border-radius: 5px;
     padding: .2em;
     text-align: center;
+    z-index: 1500;
 }
+
 .admin-user-card-context-menu_element{
     background: var(--admin-blue);
-    padding: .5em;
+    padding: .5em 1em;
     color: var(--admin-white);
     font-weight: bold;
     border-radius: .2em;
     font-size: .7em;
     margin: .2em 0;
+    cursor: pointer;
+
 }
 
+
+.admin-user-card-context-menu_element:hover{
+    background: var(--admin-bold-blue);
+}
 /* =================== */
 .admin-product-display{
     display: flex
@@ -592,6 +600,13 @@ a.router-link-active.admin-fliter-box-element{
     font-size: 1.2em;
     font-weight: bold;
     color: var(--solid-pink);
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media (min-width: 1000px) {

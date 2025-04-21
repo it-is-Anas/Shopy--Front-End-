@@ -7,7 +7,7 @@ import homeProductStore from './HomeProductsStore/main';
 import favorateProductsStore from './FavorateProductsStore/main';
 import CartStore from './CartStore/main';
 import orderStore from './Order/main';
-
+import adminHomeStore from './Admin/Home/main';
 export default createStore({
   state: {
     backEndIp: 'http://localhost:3000/',
@@ -27,5 +27,6 @@ export default createStore({
     favorateProductsStore,
     CartStore,
     orderStore,
+    adminHomeStore,
   }
 })
