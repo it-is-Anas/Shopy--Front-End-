@@ -48,5 +48,50 @@ export default {
         }catch(err){
             console.log(err,'ERR in block user from server');
         }; 
-    }
+    },async pointAsAdmin(context,userId){
+        const url = context.getters.ip.pointAsAdmin;
+        const token = context.getters.getToken;
+        try{
+            const response = await axios.patch(url + userId, {} ,{
+                headers:{
+                    Authorization: 'Bearer '+ token,
+                }
+            });
+            if(response.status === 201){
+                context.commit('pointedAsAdmin',userId);
+            }
+        }catch(err){
+            console.log(err,'ERR in block user from server');
+        }; 
+    },async unPointAsAdmin(context,userId){
+        const url = context.getters.ip.unPointAsAdmin;
+        const token = context.getters.getToken;
+        try{
+            const response = await axios.patch(url + userId, {} ,{
+                headers:{
+                    Authorization: 'Bearer '+ token,
+                }
+            });
+            if(response.status === 201){
+                context.commit('unPointedAsAdmin',userId);
+            }
+        }catch(err){
+            console.log(err,'ERR in block user from server');
+        }; 
+    },async pullProducts(context){
+        const url = context.getters.ip.pullProduct;
+        const token = context.getters.getToken;
+        try{
+            const response = await axios.get(url ,{
+                headers:{
+                    Authorization: 'Bearer '+ token,
+                }
+            });
+            if(response.status === 200){
+                context.commit('updateLocalProducts',response.data.products);
+            }
+        }catch(err){
+            console.log(err,'ERR in block user from server');
+        }; 
+    },
 }; 

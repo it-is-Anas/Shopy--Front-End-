@@ -7,9 +7,16 @@ export default {
         return {
             getUsers: ip + 'admin/get-users',    
             blockUser: ip + 'admin/block-user/',    
-            unBlockUser: ip + 'admin/un-block-user/',    
+            unBlockUser: ip + 'admin/un-block-user/', 
+            pointAsAdmin: ip + 'admin/create-sub-admin/',//id
+            unPointAsAdmin: ip + 'admin/delete-sub-admin/',//id
+            pullProduct: ip + 'product/latest-products',//get
+            
         }
     },getUsers(state){
         return state.users;
+    },
+    getProducts(state){
+        return state.products;
     },
 };

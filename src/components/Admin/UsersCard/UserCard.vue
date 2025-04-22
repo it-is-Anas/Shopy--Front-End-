@@ -11,13 +11,13 @@
         <img @click="contextMenuHandler" v-if="menuIcon"  class="admin-user-card-menu-icon"  src="../../../assets/System/Admin/cmenu.png" alt="">
         
         <div class="admin-user-card-btn-box" v-if="blockingType" >
-            <p class="admin-fliter-box-element">Unblock</p>
-            <p class="admin-fliter-box-element active">Delete For Ever</p>
+            <p class="admin-fliter-box-element" :class="{'active':!blocked}" @click="unBlockUser(this.id)" >Unblock</p>
+            <p class="admin-fliter-box-element" :class="{'active':blocked}"  @click="blockUser(this.id)"   >Block</p>
         </div>
 
         <div class="admin-user-card-btn-box" v-if="adminType" >
-            <p class="admin-fliter-box-element">point as user</p>
-            <p class="admin-fliter-box-element active">point as admin</p>
+            <p class="admin-fliter-box-element" @click="unPointAsAdmin(this.id)"  :class="{'active': this.rank}" >point as user</p>
+            <p class="admin-fliter-box-element " @click="pointAsAdmin(this.id)" :class="{'active': !this.rank}" >point as admin</p>
         </div>
 
 
@@ -49,13 +49,25 @@ export default {
         },...mapActions({
             'blockUserAction': 'adminHomeStore/blockUser',
             'unBlockUserAction': 'adminHomeStore/unBlockUser',
+            'pointAsAdminAction': 'adminHomeStore/pointAsAdmin',
+            'unPointAsAdminAction': 'adminHomeStore/unPointAsAdmin',
         }),blockUser(id){
             this.blockUserAction(id);
             this.gBkClickHandler();
         },unBlockUser(id){
             this.unBlockUserAction(id);
             this.gBkClickHandler();
-        }
+        },pointAsAdmin(id){
+            if(!this.rank){
+                this.pointAsAdminAction(id);
+                this.gBkClickHandler();
+            }
+        },unPointAsAdmin(id){
+            if(this.rank){
+                this.unPointAsAdminAction(id);
+                this.gBkClickHandler();
+            }
+        },
     },computed:{
         gBk(){
             return this.adminUserContextMenuDISPLAYER;

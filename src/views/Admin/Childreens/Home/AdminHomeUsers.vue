@@ -37,48 +37,7 @@ export default {
         Links,
     },data(){
         return {
-            rulerOne:{
-                low: 10,
-                hight: 40,
-                step: 5
-            },
-            chartsOne:[
-                {
-                    id: 0 ,
-                    label: 'Sn',
-                    prec: 20
-                },
-                {
-                    id: 0 ,
-                    label: 'Mn',
-                    prec: 90
-                },
-                {
-                    id: 0 ,
-                    label: 'Th',
-                    prec: 90
-                },
-                {
-                    id: 0 ,
-                    label: 'Fr',
-                    prec: 10
-                },
-                {
-                    id: 0 ,
-                    label: 'St',
-                    prec: 50
-                },
-                {
-                    id: 0 ,
-                    label: 'Tus',
-                    prec: 80
-                }, 
-                {
-                    id: 0 ,
-                    label: 'wed',
-                    prec: 40
-                },
-            ]
+                
         };
     },computed:{
         ...mapGetters({
