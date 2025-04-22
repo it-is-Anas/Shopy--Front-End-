@@ -8,18 +8,20 @@ export default async (to,from,next)=>{
         const store = useStore();
         store.commit('authStore/getTokenLocal');
         const token = store['getters']['authStore/getToken'].token;
+        console.log(token);
         if(!token.length){
-        next({name:'notAuth'});//not auth please sign up
-        }else{
+            next({name:'notAuth'});//not auth please sign up
+        }
+        else{
         //check if blocked
         let profile = store['getters']['authStore/getProfile'];
-            if(!profile.firstName.length && !profile.lastName.length&& !profile.email.length && profile.blocked === null){
+        if(!profile.firstName && !profile.lastName && profile.email && profile.blocked === null){
             await store.dispatch('authStore/getProfile');
             profile = store['getters']['authStore/getProfile'];
-            }
-            if(profile.blocked){
+        }
+        if(profile.blocked){
             next({name: 'blocked403'});// sorry you r blocked
-            }
+        }
             next();
         }
     }
