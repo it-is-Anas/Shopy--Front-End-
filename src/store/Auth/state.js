@@ -14,6 +14,7 @@ export default function state(){
         logged: false,
         mySalles:[],
         isAdmin: false,
+        blocked: null,
     };
 };
 

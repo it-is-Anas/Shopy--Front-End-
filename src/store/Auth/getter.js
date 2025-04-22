@@ -26,7 +26,7 @@ export default {
             password: state.password,
             isAdmin: state.isAdmin,
         };
-    },
+    }, 
     getProfile(state){
         return state;
         // return{

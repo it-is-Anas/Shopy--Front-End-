@@ -31,6 +31,9 @@ export default {
                 console.error('Error during sign-up:', error);
                 context.commit('setErr',{err: 'Some thing went wrong , please try again later !'});
             }
+            if(error.status === 403){
+                context.commit('updateProfileDateBlocked');
+            }
         }
     },
     async logIn(context){
@@ -62,6 +65,9 @@ export default {
                 console.error('Error during sign-up:', error);
                 context.commit('setErr',{err: 'Some thing went wrong , please try again later !'});
             } 
+            if(error.status === 403){
+                context.commit('updateProfileDateBlocked');
+            }
         }
     },async getProfile(context){
         context.commit('sendRequest');
@@ -81,6 +87,9 @@ export default {
         } catch (error) {
             context.commit('stopSendRequest');
             context.commit('setErr',{err: 'Some thing went wrong , please try again later !'});
+            if(error.status === 403){
+                context.commit('updateProfileDateBlocked');
+            }
         }
     },async updateProfilePicture(context,formData){
         context.commit('sendRequest');
@@ -99,6 +108,9 @@ export default {
                 context.commit('stopSendRequest');
             } catch (error) {
                 context.commit('setErr',{err: 'Some thing went wrong , please try again later !'});
+                if(error.status === 403){
+                    context.commit('updateProfileDateBlocked');
+                }
             } 
     },async getMySalles(context){
         context.commit('sendRequest');
@@ -119,6 +131,9 @@ export default {
         } catch (error) {
             context.commit('stopSendRequest');
             context.commit('setErr',{err: 'Some thing went wrong , please try again later !'});
+            if(error.status === 403){
+                context.commit('updateProfileDateBlocked');
+            }
         }
     }
 };

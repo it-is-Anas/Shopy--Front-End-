@@ -22,15 +22,19 @@ export default {
         state.imgUrl =  payload.img_url  ;
     },
     updateProfileDate(state,payload){
-        state.firstName = payload.first_name ;
-        state.lastName = payload.last_name  ;
-        state.email = payload.email ;
-        state.password = payload.password  ;
-        state.birthDay = payload.birth_day  ;
-        state.gender = payload.gender  ;
-        state.id = payload.id  ;
-        state.imgUrl = payload.img_url  ;
-        state.isAdmin = payload.isAdmin  ;
+        state.firstName = payload.first_name || '' ;
+        state.lastName = payload.last_name || '' ;
+        state.email = payload.email || '' ;
+        state.password = payload.password || '' ;
+        state.birthDay = payload.birth_day || '' ;
+        state.gender = payload.gender|| ''  ;
+        state.id = payload.id || '' ;
+        state.imgUrl = payload.img_url || '' ;
+        state.isAdmin = payload.isAdmin || '' ;
+        state.blocked = payload.blocked  || '' ;
+    },
+    updateProfileDateBlocked(state,payload){
+        state.blocked = true ;
     }
     ,updateLocalDateLogIn(state,payload){
         state.email = payload.email;
