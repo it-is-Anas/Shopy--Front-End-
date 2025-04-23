@@ -1,10 +1,10 @@
 <template>
     <div class="admin-home" >
         <Links />
-        <div class="admin-charts-section">
+        <!-- <div class="admin-charts-section">
             <Chart class="col" :chartTitle="'Users registertions :'" :ruler="rulerOne" :charts="chartsOne" />
             <Chart class="col" :chartTitle="'Sells :'" :ruler="rulerOne" :charts="chartsOne" />
-        </div>
+        </div> -->
         <h4 class="admin-section-title" >Products :</h4>
         <div class="admin-users-display admin-product-display">
             <productCard 

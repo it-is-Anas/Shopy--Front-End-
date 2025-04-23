@@ -1,10 +1,10 @@
 <template> 
     <div class="admin-home" >
         <Links />
-        <div class="admin-charts-section" v-if="Users.length" >
+        <!-- <div class="admin-charts-section" v-if="Users.length" >
             <Chart class="col" :chartTitle="'Users registertions :'" :ruler="rulerOne" :charts="chartsOne" />
             <Chart class="col" :chartTitle="'Sells :'" :ruler="rulerOne" :charts="chartsOne" />
-        </div>
+        </div> -->
         <div class="admin-users-display" v-if="Users.length" >
             <h4 class="admin-section-title" >Users :</h4>
             <UserCard  

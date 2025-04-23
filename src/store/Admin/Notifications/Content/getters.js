@@ -5,10 +5,10 @@ export default {
     ip(state,getters,rootState,rootGetters){
         const ip =  rootState.backEndIp;
         return {
-            // get: ip + 'product/get' ,
-            create: ip + 'favorate-product/create' ,//id
-            delete: ip + 'favorate-product/delete' ,//id
-            get: ip + 'favorate-product/get',        
+            getNotifications: ip + 'admin/notfication/get-all-notfication',        
+            createNotifications: ip + 'admin/notfication/create',        
         }
+    },getNots(state){
+        return state.nots;
     }
 };

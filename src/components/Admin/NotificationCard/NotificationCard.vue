@@ -1,12 +1,44 @@
 <template>
     <div class="admin-notification-card" >
-        <img  class="admin-notification-card-img" src="../../../assets/notiexp.jpg" alt="" >
+        <img  class="admin-notification-card-img" :src="imgSrc" alt="" >
         <div class="admin-notification-card-text">
-            <h5 class="admin-notification-card-name">Admin Name</h5>
+            <h5 class="admin-notification-card-name">{{ name }}</h5>
             <p class="admin-notification-card-content">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas quam reiciendis id ad eum illum qid ad eum illum qid ad eum illum qid ad eum illum q 
+                {{ content }}
             </p>
         </div>
-        <p class="admin-notification-card-date">2/2/2011 | 5:00 pm</p>
+        <p class="admin-notification-card-date">{{ +date.getDay() + 1 }} - {{ +date.getMonth()+1 }} - {{ date.getFullYear() }} | {{ date.getHours() }} : {{ date.getMinutes() }} {{  date.getHours() >= 12 ? 'PM':'AM' }}</p>
     </div>
 </template>
+<script>
+export default {
+    props:{
+        name: {
+            default: 'Admin Name',
+            type: String,
+        },
+        content: {
+            default: 'Desc...',
+            type: String,
+        },datee: {
+            default: 'Desc...',
+            type: String,
+        },
+        imgUrl:{
+            default: null,
+            type: String,
+        },
+    },computed: {
+        backIp(){ return this.$store.getters['authStore/ip'].raw;},
+        imgSrc(){
+            if(this.imgUrl){
+                return this.backIp + this.imgUrl;
+            }else 
+                return require('@/assets/notiexp.jpg');
+        },
+        date(){
+            return new Date(this.datee);
+        }
+    }
+}
+</script>

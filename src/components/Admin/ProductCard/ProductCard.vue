@@ -26,7 +26,7 @@ export default {
         datee:{
             default: new Date(),
             type: Date,
-        },
+        }, 
         imgUrl:{
             default: null,
             type: String,
