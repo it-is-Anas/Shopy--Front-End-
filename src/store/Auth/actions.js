@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRoute } from "vue-router";
 
-export default { 
+export default {  
     async signUp(context){
         context.commit('sendRequest');
         const ip = context.getters.ip.signUp;

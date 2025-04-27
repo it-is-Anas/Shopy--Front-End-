@@ -34,7 +34,7 @@ export default {
         state.blocked = payload.blocked  || '' ;
     },
     updateProfileDateBlocked(state,payload){
-        state.blocked = true ;
+        state.blocked = true ; 
     }
     ,updateLocalDateLogIn(state,payload){
         state.email = payload.email;

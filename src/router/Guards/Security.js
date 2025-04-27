@@ -15,13 +15,13 @@ export default async (to,from,next)=>{
         else{
         //check if blocked
         let profile = store['getters']['authStore/getProfile'];
-        if(!profile.firstName && !profile.lastName && profile.email && profile.blocked === null){
-            await store.dispatch('authStore/getProfile');
-            profile = store['getters']['authStore/getProfile'];
-        }
-        if(profile.blocked){
-            next({name: 'blocked403'});// sorry you r blocked
-        }
+            if(profile.blocked === null){
+                await store.dispatch('authStore/getProfile');
+                profile = store['getters']['authStore/getProfile'];
+            }
+            if(profile.blocked){
+                next({name: 'blocked403'});// sorry you r blocked
+            }
             next();
         }
     }

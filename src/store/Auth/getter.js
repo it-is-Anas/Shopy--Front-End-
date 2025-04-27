@@ -3,7 +3,7 @@ export default {
         return state.errValidation;
     },
     ip(state,_,rootState){
-        const ip = rootState.backEndIp;
+        const ip = rootState.backEndIp; 
         return {
             raw: ip,
             signUp: ip + 'auth/sign-up',
