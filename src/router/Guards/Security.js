@@ -9,7 +9,7 @@ export default async (to,from,next)=>{
         store.commit('authStore/getTokenLocal');
         const token = store['getters']['authStore/getToken'].token;
         console.log(token);
-        if(!token.length){
+        if(!token?.length){
             next({name:'notAuth'});//not auth please sign up
         }
         else{
