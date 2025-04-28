@@ -12,5 +12,7 @@ export default {
         return state.nots;
     },getLoading(state){
         return state.loading;
+    },getMsg(state){
+        return state.msg;
     }
 };

@@ -39,6 +39,7 @@ export default {
         ...mapGetters({
             'nots': 'adminNotsStore/getNots', 
             'loading': 'adminNotsStore/getLoading',
+            'getMsg': 'adminNotsStore/getMsg',
         })
     },watch: {
         nots(newNots,oldNots){
@@ -51,6 +52,8 @@ export default {
             }else{
                 this.closeLoaderPage();
             }
+        },getMsg(v){
+            this.setMsg(v);
         }
     },methods: {
         ...mapActions({
@@ -68,7 +71,9 @@ export default {
         },
         closeLoaderPage(){
             this.$refs.appLoader.closeLoader();
-        },
+        },setMsg(msg){
+            this.$refs.appMsg.setMsg(msg);
+        }
     },mounted(){
         this.pullNotsAction();
     },data(){

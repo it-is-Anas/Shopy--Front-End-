@@ -35,6 +35,7 @@ export default {
                 context.commit('createNot',not);
             }
             context.commit('closeLoading');
+            context.commit('setMsg','Notification Has been created !');
         }catch(err){
             context.commit('closeLoading');
             console.log('Err in notfifcation creation');

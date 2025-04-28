@@ -8,5 +8,7 @@ export default {
         state.loading = false;
     },openLoading(state){
         state.loading = true;
+    },setMsg(state,msg){
+        state.msg = msg;
     }
 };
