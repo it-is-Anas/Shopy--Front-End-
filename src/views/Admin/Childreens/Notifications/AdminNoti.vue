@@ -24,6 +24,8 @@
             </div>
         </div>
     </div>
+    <app-loader ref="appLoader" />
+    <app-msg ref="appMsg" />
 </template>
 <script>
 import NotificationCard from '@/components/Admin/NotificationCard/NotificationCard.vue';
@@ -33,17 +35,23 @@ export default {
     components: {
         NotificationCard,
     },
-    computed: {
+    computed: {  
         ...mapGetters({
             'nots': 'adminNotsStore/getNots', 
+            'loading': 'adminNotsStore/getLoading',
         })
     },watch: {
         nots(newNots,oldNots){
             if(newNots.length > oldNots.length){
                 this.clearTextArea();
             }
+        },loading(v){
+            if(v){
+                this.openLoaderPage();
+            }else{
+                this.closeLoaderPage();
+            }
         }
-
     },methods: {
         ...mapActions({
             'pullNotsAction': 'adminNotsStore/pullNotification',
@@ -53,10 +61,14 @@ export default {
                 this.createNotAction(content);
                 console.log('notification can\'t be empty');
             }
-
         },clearTextArea(){
             this.content = '';
-        }
+        },openLoaderPage(){
+            this.$refs.appLoader.openLoader();
+        },
+        closeLoaderPage(){
+            this.$refs.appLoader.closeLoader();
+        },
     },mounted(){
         this.pullNotsAction();
     },data(){

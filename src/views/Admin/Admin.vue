@@ -19,6 +19,9 @@
             AdminHeader,
             AdminAside,
         },
+        methods: {
+            
+        }
     }
 </script>
     

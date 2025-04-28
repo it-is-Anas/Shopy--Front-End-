@@ -10,5 +10,7 @@ export default {
         }
     },getNots(state){
         return state.nots;
+    },getLoading(state){
+        return state.loading;
     }
 };

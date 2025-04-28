@@ -17,6 +17,8 @@
 
         </div>
     </div>
+    <app-loader ref="appLoader" />
+    <app-msg ref="appMsg" />
 </template>
 <script>
 import Links from '@/components/Admin/Links/AdminUsersLinks.vue';
@@ -30,13 +32,28 @@ export default {
     },computed: {
         ...mapGetters({
             'Users': 'adminHomeStore/getUsers',
+            'loading': 'adminHomeStore/getLoading',
         })
     },methods:{
         ...mapActions({
             pullUsersFromServer: 'adminHomeStore/pullUsers',
-        })
+        }),
+        openLoaderPage(){
+            this.$refs.appLoader.openLoader();
+        },
+        closeLoaderPage(){
+            this.$refs.appLoader.closeLoader();
+        },
     },mounted(){
         this.pullUsersFromServer();
+    },watch:{ 
+        loading(v){
+            if(v){
+                this.openLoaderPage();
+            }else{
+                this.closeLoaderPage();
+            }
+        }
     }
 }
 </script>

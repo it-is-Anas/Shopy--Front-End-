@@ -19,6 +19,8 @@
             />
         </div>
     </div>
+    <app-loader ref="appLoader" />
+    <app-msg ref="appMsg" />
 </template>
 <script>
 import Chart from '@/components/Admin/Chart/Chart.vue';
@@ -39,13 +41,27 @@ export default {
     methods:{
         ...mapActions({
             'pullProductsAction': 'adminHomeStore/pullProducts'
-        })
+        }),openLoaderPage(){
+            this.$refs.appLoader.openLoader();
+        },
+        closeLoaderPage(){
+            this.$refs.appLoader.closeLoader();
+        },
     },mounted(){
         this.pullProductsAction();
     },computed: {
         ...mapGetters({
-            'products': 'adminHomeStore/getProducts'
+            'products': 'adminHomeStore/getProducts',
+            'loading': 'adminHomeStore/getLoading',
         })
-    }
+    },watch:{
+        loading(v){
+            if(v){
+                this.openLoaderPage();
+            }else{
+                this.closeLoaderPage();
+            }
+        }
+    },
 }
 </script>

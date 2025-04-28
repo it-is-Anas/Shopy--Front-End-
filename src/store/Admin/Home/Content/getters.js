@@ -18,5 +18,7 @@ export default {
     },
     getProducts(state){
         return state.products;
-    },
+    },getLoading(state){
+        return state.loading;
+    }
 };

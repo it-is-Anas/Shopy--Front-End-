@@ -36,5 +36,9 @@ export default {
         state.users = users;
     },updateLocalProducts(state,products){
         state.products = products;
-    },
+    },closeLoading(state){
+        state.loading = false;
+    },openLoading(state){
+        state.loading = true;
+    }
 };
