@@ -6,8 +6,17 @@
     --solid-pink: #D48DAB;
     --light-gray: #F2F2F2;
     --white: #FFFFFF;
+    /* ------------------------ */
+    --n-purple: #B9B0F5;
+    --n-green: #B3DDC6;
+    --n-black: #252726;
+    --n-dark-white: #F6F6F6;
+    --n-white: #FFFFFF;
+    --n-yellow: #FBF1A3;
+    --n-red: #E95252;
+    --n-gray: #EEEEEE;
 }
-*{
+*{ 
     margin: 0;
     padding: 0;
     --web-box-sizing: border-box;
@@ -68,7 +77,11 @@ i{
     /* font-size: 2em; */
     font-size: 1.6em;
     font-weight: bold;
-    color: var(--solid-pink);
+    color: var(--n-black);
+}
+
+.g-header-logo_it{
+    color: var(--n-purple);
 }
 
 .page{

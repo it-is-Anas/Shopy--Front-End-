@@ -28,10 +28,10 @@
 .auth-page-form_img{
     width: 18em;
     height: 15em;
-    height: 14em;
+    height: 18em;
 }
 .auth-page-form_middle-bar{
-    background: var(--solid-pink);
+    background: var(--n-purple);
     width: 0.05em;
     height: 70%;
     border-radius: 50%;
@@ -51,7 +51,7 @@
     text-align: center;
     font-size: 1.6em;
     font-weight: bold;
-    color: var(--solid-pink);
+    color: var(--n-purple);
 }
 .auth-form_input{
     display: flex;
@@ -86,7 +86,7 @@
     transition: .5s  all ease-in-out;
 }
 .auth-form_btn{
-    background: var(--solid-pink);
+    background: var(--n-purple);
     border: 0;
     outline: none;
     border-radius: 0.5em;

@@ -11,7 +11,7 @@
                     :content="not.content"
                     :datee="not.createdAt"
                     :imgUrl="not.img_url"
-
+                    
                 />
             </div>
         </div>
