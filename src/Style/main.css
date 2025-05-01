@@ -300,48 +300,62 @@ i{
     background: #f2f2f221;
 }
 .g-product-pop-up{
-    background-color: var(--light-gray);
-    /* width: 30em;
-    height: 30em; */
+    background-color: var(--n-white);
+    min-width: 30em;
+    min-height: 30em;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1em;
-    /* max-width: 80%;
-    max-height: 75%; */
     z-index: 1000;
-    border: 1px solid var(--solid-pink);
-    box-shadow: 0px 1px 5.1px 0px var(--solid-purple);
+    box-shadow: 0px 1px 5.1px 0px var(--n-black);
+    padding: 1.5em;
 }
 .g-product-pop-up_title{
-    padding: 10px;
+    margin-left: -5px;
     font-weight: bold;
     font-size: 1.1em;
 }
 
 .g-product-pop-up_input-box{
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     color: var(--solid-purple);
     margin: 1em 0em;
     flex-wrap: wrap;
 }
+.g-product-pop-up_input-box.btn-upload-picture{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .g-product-pop-up_label{
-    margin: 0.4em;
+    /* margin: 0.4em; */
     font-weight: bold;
-    font-size: 1.1em;
-    margin-left: 2em;
+    font-size: .8em;
+    /* margin-left: 2em; */
 }
 
 .g-product_input{
-    margin: 0 5.4em 0 auto;
-    padding: 0.4em 0.5em;
+    /* margin: 0 5.4em 0 auto; */
+    padding: 0.5em 0.5em;
     border-radius: 0.2em;
     border: none;
     outline: none;
+    display: block;
+    margin: 0 auto;
+    background: var(--n-gray);
+    width: 95%;
+    margin-top: .3em;
+}
+
+.auth-form_btn.btn-upload-picture{
+    background-color: var(--n-green);
+    color: var(--n-white);
+    border-color: var(--n-green);
 }
 
 .g-product-pop-up_input-box.desc{
@@ -352,18 +366,15 @@ i{
     margin-right: auto;
 }
 .g-product-pop-up_input-box.desc .g-product_input{
-    width: 20em;
-    /* height: 9em; */
+    /* width: 20em; */
     height: 6em;
-    margin: 1em;
+    /* margin: 1em; */
 }
 
 .g-product-pop-up_btn-box{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 1.3em;
-    margin-bottom: 1em;
 }
 .g-product-pop-up_btn-box.err{
     justify-content: center;
@@ -763,10 +774,10 @@ i{
         left: 1em;
     }
     .g-product-pop-up{
-        width: calc(100dvw );
-        height: calc(100dvh );
+        width: calc(100dvw);
+        height: calc(100dvh);
         border-radius: 0;
-        display: flex;
+        display: flex; 
         flex-direction: column;
         justify-content: space-around;
         align-items: center;

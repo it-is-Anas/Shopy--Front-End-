@@ -2,29 +2,30 @@
     <transition name="fade" >
         <div v-if="openProductPopUp" class="g-product-pop-up">
             <div class="g-close-btn-for-mobile" @click="toCloseProductPopup" >+</div>
-            <div class="g-product-pop-up_title">Create Product :</div>
+            <div class="g-product-pop-up_title">Create new product : </div>  
             <div class="g-product-pop-up_input-box">
-                <div class="g-product-pop-up_label">Product Name *:</div>
+                <label class="g-product-pop-up_label">Product Name :</label>
                 <input type="text" v-model="productName" placeholder="Ice Creem" class="g-product_input">
             </div>
             <div class="g-product-pop-up_input-box">
-                <div class="g-product-pop-up_label">Brand :</div>
+                <label class="g-product-pop-up_label">Brand :</label>
                 <input type="text" v-model="productBrand" placeholder="shopy" class="g-product_input">
             </div>
             <div class="g-product-pop-up_input-box">
-                <div class="g-product-pop-up_label" >Price *:</div>
+                <label class="g-product-pop-up_label" >Price  :</label>
                 <input type="text" v-model="productPrice" placeholder="3.1" class="g-product_input">
             </div>
             <div style="display: none" class="g-product-pop-up_input-box">
-                <div class="g-product-pop-up_label">Quentity:</div>
+                <label class="g-product-pop-up_label">Quentity:</label>
                 <input type="text" v-model="productQty" placeholder="2" class="g-product_input">
             </div>
-            <div class="g-product-pop-up_input-box">
-                <div class="g-product-pop-up_label">Product Picture:</div>
-                <input ref="productFile" @change="onFileChange"  type="file" placeholder="2" class="g-product_input">
+            <div class="g-product-pop-up_input-box btn-upload-picture">
+                <label class="g-product-pop-up_label">Product Picture:</label>
+                <input style="display: none;" ref="productFile" @change="onFileChange"  type="file" placeholder="2" class="g-product_input">
+                <p  @click="()=>$refs.productFile.click()" class="user-cart_btn-sec auth-form_btn btn-upload-picture"  >Upload an image</p>
             </div>
             <div class="g-product-pop-up_input-box  desc ">
-                <div class="g-product-pop-up_label">Product description:</div>
+                <label class="g-product-pop-up_label">Product description:</label>
                 <textarea class="g-product_input" v-model="productDesc" placeholder="Product Description ..." ></textarea>
             </div>
             <div class="g-product-pop-up_btn-box err">
@@ -48,8 +49,8 @@ import { helpers, required , numeric } from '@vuelidate/validators';
 
 export default {
     setup(){
-        const store = useStore();
-        const openProductPopUp = ref(false);
+        const store = useStore(); 
+        const openProductPopUp = ref(1);
 
 
 

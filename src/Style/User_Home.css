@@ -209,16 +209,19 @@
     border: .2em solid var(--solid-pink);
     color: var(--solid-pink);
     font-size: 1em;
+    font-size: .8em;
     padding: .2em .4em;
     border-radius: .3em;
     font-weight: bold;
     margin: 0 0.3em;
     cursor: pointer;
     white-space: nowrap;
+    color: var(--n-purple);
+    border-color: var(--n-purple);
 }
 .user-cart_btn-main{
-    background: var(--solid-pink);
-    color: var(--white);
+    background: var(--n-purple);
+    color: var(--n-white);
 }
 .cart-product_btn{
     margin: 0.4em;
