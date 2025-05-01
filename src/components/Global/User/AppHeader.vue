@@ -3,7 +3,7 @@
         <header-logo />
         <!-- <search-box  /> -->
         <menu-header :active="active" />
-    </header>
+    </header> 
 </template>
 <script>
 import HeaderLogo from '@/components/Global/HeaderLogo.vue';

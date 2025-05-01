@@ -25,6 +25,7 @@
     --o-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--n-black);
 }
 #app{
     overflow: hidden;
@@ -222,14 +223,16 @@ i{
     position: absolute;
     top: 0;
     left: 0;
+    left: 8px;
     transform: translate(27%, -17%) rotate(5deg);
     transform: translate(60%, -17%) rotate(5deg);
+    transform: translate(60%, -17%);
     font-size: 0.7em;
-    background: var(--white);
+    /* background: var(--white); */
     padding: .1em;
     border-radius: .3em;
     font-weight: 700;
-    color: var(--solid-pink);
+    color: var(--n-red);
 }
 .g-menu-header_menu{
     width: 15em;
@@ -493,35 +496,32 @@ i{
 
 }
 .g-profile-page_filter-bar{
-    width: 95%;
-    overflow-x: scroll;
-    height: 3em;
-    background-color: var(--light-gray);
+    width: 100%;
+    /* overflow-x: scroll;
+    height: 3em; */
     margin: 1em auto;
-    border-radius: .4em;
-    box-shadow: 0px 0px 3px 0px var(--solid-purple);
-
     display: flex;
     align-content: center;
     justify-content: flex-start;
     flex-wrap: nowrap;
-
 }
 .g-profile-page_tab{
-    padding: .3em 1em;
+    padding: .3em .4em;
     background: var(--white);
     margin: .4em 1em;
-    font-size: .9em;
-    flex: 0 0 auto;
+    font-size: .7em;
+    /* flex: 0 0 auto; */
     font-weight: 600;
     border-radius: .3em;
     cursor: pointer;
-    border: .2em solid var(--light-blue);
+    border: .2em solid ;
     display: grid;
     place-content: center;
+    height: 2em;
+    color: var(--n-black);
 }
 .g-profile-page_tab.active{
-    background: var(--light-blue);
+    background: var(--n-black);
     color: var(--white);
     border-color: transparent;
 }

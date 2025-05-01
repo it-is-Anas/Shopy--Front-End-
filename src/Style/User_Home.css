@@ -159,8 +159,7 @@
 .home-section-head-line{
     font-size: 1.4em;
     font-weight: bold;
-    color: var(--solid-purple);
-    padding: 1em;
+    padding: 1em 0.5em;
 }
 .group-home-product{
     width: 100%;

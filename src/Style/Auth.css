@@ -103,9 +103,16 @@
     width: 7em;
     width: 9em;
     background: var(--white);
+    background: transparent;
+    text-align: left;
+    margin-right: auto;
+}
+
+.auth-form_btn.link.active > a{
+    color: var(--n-purple);
 }
 .auth-form_btn.link.active{
-    background: var(--light-blue);
+
 }
 .auth-form-btn_link{
     text-decoration: none;
@@ -161,6 +168,11 @@
     }
     .auth-page-form_middle-bar{
         display: none;
+    }
+    .auth-form_btn.link{
+        text-align: center;
+        margin-right: 0;
+        font-size: 16px;
     }
 }
 @media (max-width: 550px) {
