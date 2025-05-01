@@ -782,7 +782,6 @@ i{
         min-width: auto;
         min-height: auto;
         align-items: center;
-        /* overflow-x: hidden;   */
     }
     .g-product-pop-up_input-box{
         width: 70%;
