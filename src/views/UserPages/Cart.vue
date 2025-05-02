@@ -17,7 +17,7 @@
                     v-for="one in cartProducts" 
                         :key="one"
                         :name="one.name"
-                        :dsec="one.name"
+                        :desc="one.desc"
                         :qty="one.qty"
                         :price="one.price"
                         :id="one.id"
