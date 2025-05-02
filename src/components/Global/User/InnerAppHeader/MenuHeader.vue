@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div class="g-menu-header">
         <i class="fa fa-plus" @click="openProductPopUp" ></i>
         <i class="fas fa-bell g-menu-header_notification-icon" @click="toOpenNotification" >
@@ -11,7 +11,20 @@
         <!-- ================= -->
         <transition name="fade" >
             <div v-if="openNotification" class="g-notification-menu">
-                <p v-for="one in notifications" :key="one.id" @click="makeNotificationSeen(one.id)" class="g-notification" :class="{'seen': one.seen}" >{{ one.content }}</p>
+                <div class="g-notification-menu_head-line">
+                    <h3 class="" >Notification :</h3>
+                    <h3 v-if="unSeenedNotifications.length" class="g-notification-menu-head-line_number-un-seen-nots" >{{ unSeenedNotifications.length }}</h3>
+                </div>
+                <div class="">
+                    <UserNotification  
+                    v-for="one in notifications"  
+                    :key="one.id" 
+                    @click="makeNotificationSeen(one.id)" 
+                    :id="one.id"
+                    :content="one.content" 
+                    :seen="one.seen"
+                    />
+                </div>
             </div>
         </transition>
         <div v-if="openNotification" class="g-close-btn-for-mobile" @click="toCloseNotification"  >+</div>
@@ -40,11 +53,13 @@ import HeaderLogo from '@/components/Global/HeaderLogo.vue';
 import MenuHeaderBtn from '@/components/Custom/Buttons/MenuHeaderBtn.vue';
 import { useStore } from 'vuex';
 import CreateProductPop from '@/components/Custom/ProductPopUp/CreateProductPop.vue';
+import UserNotification from '@/components/Custom/Notification/UserNotification.vue';
 export default {
     components: {
         HeaderLogo,
         MenuHeaderBtn,
         CreateProductPop,
+        UserNotification,
     },props:{
         active:{},
     },
