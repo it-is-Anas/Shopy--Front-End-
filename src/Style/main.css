@@ -300,7 +300,7 @@ i{
 .g-product-pop-up{
     background-color: var(--n-white);
     min-width: 30em;
-    min-height: 30em;
+    /* min-height: 30em; */
     position: absolute;
     top: 50%;
     left: 50%;

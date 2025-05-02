@@ -1,15 +1,27 @@
 <template>
     <div class="home-product" >
-        <img v-if="imgUrl" class="home-product_img" :src="backIp+imgUrl" alt="">
-        <img v-else class="home-product_img" src="../../../assets/logo.png" alt="">
-        <h4 class="home-product_brand" >{{ brand }}</h4>
-        <h4 class="home-product_title" >{{ name }}</h4>
-        <h4 class="home-product_desc" >{{ desc }}</h4>
-        <div class="home-product_footer">
+        <img  class="home-product_img" :src="imgSrc" alt="">
+        <!-- <h4 class="home-product_brand" >{{ brand }}</h4> -->
+        <div class="home-product_name-price-box">
+            <h4 class="home-product_title" >{{ name }}</h4>
             <p class="home-product_price">{{ price }}$</p>
-            <i class="fa fa-trash home-product_save-btn g-profile-page_product-btc sec" @click="deleteProduct" ></i>
-            <p class="home-product_add-to-cart  g-profile-page_product-btc main " @click="openEditPopUp" >Edit Product</p>
         </div>
+        <h4 class="home-product_desc" :class="[{'empty': !desc}]"  >{{ description }}</h4>
+        <div class="home-product_footer">
+            <div class="home-product-footer_rate-box">
+                <i class=" home-product-footer-rate-box_star-icon  fa fa-star "  :class="[{'gold': rate >= 1}]" ></i>
+                <i class=" home-product-footer-rate-box_star-icon  fa fa-star "  :class="[{'gold': rate >= 2}]" ></i>
+                <i class=" home-product-footer-rate-box_star-icon  fa fa-star "  :class="[{'gold': rate >= 3}]" ></i>
+                <i class=" home-product-footer-rate-box_star-icon  fa fa-star "  :class="[{'gold': rate >= 4}]" ></i>
+                <i class=" home-product-footer-rate-box_star-icon  fa fa-star "  :class="[{'gold': rate === 5}]" ></i>
+            </div>
+            <div class="home-product_footer">
+                <i class="fa fa-trash home-product_save-btn g-profile-page_product-btc sec" @click="deleteProduct" ></i>
+                <i class="fa fa-cog home-product_add-to-cart  g-profile-page_product-btc main " @click="openEditPopUp" ></i>
+                <!-- <p class="home-product_add-to-cart  g-profile-page_product-btc main " @click="openEditPopUp" >Edit Product</p> -->
+            </div>
+        </div>
+
     </div>
     <ProductPopUp 
         ref="editPopUp"
@@ -45,7 +57,14 @@ export default {
             default: '1',
         },id:{
             
-        },imgUrl:{},
+        },imgUrl:{
+            default: null,
+            type: String,
+        }
+        ,rate: {
+            type: Number,
+            default: 3,
+        }
     },setup(props){
         const editPopUp = ref(null);
         const store = useStore();
@@ -65,11 +84,33 @@ export default {
             editPopUp.value.open();
         }
 
+
+        const imgSrc = computed(()=>{
+            if(props.imgUrl){
+                return backIp.value + props.imgUrl;
+            }
+            return require('@/assets/logo.png');
+        });
+
+        const description = computed(()=>{
+            const desc = props.desc;
+            if(desc){
+                if(desc.length <= 136 ){
+                    return desc;
+                }
+                const newDesc = desc.slice(0,134) + ' ...';
+                return newDesc;
+            }
+            return 'DONT HAS A DESCRIPTION';
+        });
+
         return{
             editPopUp,
             deleteProduct,
             openEditPopUp,
-            backIp
+            backIp,
+            imgSrc,
+            description,
         };
     }, 
 }
