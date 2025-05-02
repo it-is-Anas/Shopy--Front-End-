@@ -1,7 +1,6 @@
 <template>
     <div class="home-product" >
-        <img v-if="imgUrl" class="home-product_img" :src="backIp+imgUrl" alt="">
-        <img v-else class="home-product_img" src="../../../assets/logo.png" alt="">
+        <img  class="home-product_img" :src="imgSrc" alt="">
         <h4 class="home-product_brand" >{{ brand }}</h4>
         <h4 class="home-product_title" >{{ name }}</h4>  
         <h4 class="home-product_desc" >{{ desc }}</h4>
@@ -17,7 +16,7 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
-    props:{
+    props:{ 
         brand:{
             default:'brand',
         },
@@ -32,7 +31,8 @@ export default {
         },id:{
             default: null,
         },imgUrl:{
-
+            default: null,
+            type: String,
         },favorated:{
             type: Boolean,
             default: false
@@ -47,10 +47,19 @@ export default {
         }
         const backIp = computed(()=> store.getters['authStore/ip'].raw);
 
+
+        const imgSrc = computed(()=>{
+            if(props.imgUrl){
+                return backIp.value + props.imgUrl;
+            }
+            return require('@/assets/logo.png');
+        });
+
         return{
             addToFavorate,
             addToCart,
-            backIp
+            backIp,
+            imgSrc,
         };
     },mounted(){
     }
