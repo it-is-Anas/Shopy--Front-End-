@@ -13,6 +13,7 @@
     --n-dark-white: #F6F6F6;
     --n-white: #FFFFFF;
     --n-yellow: #FBF1A3;
+    --n-gold: gold;
     --n-red: #E95252;
     --n-gray: #EEEEEE;
 }
@@ -222,13 +223,10 @@ i{
 .notification-icon_number-of-notification{
     position: absolute;
     top: 0;
-    left: 0;
-    left: 8px;
-    transform: translate(27%, -17%) rotate(5deg);
-    transform: translate(60%, -17%) rotate(5deg);
-    transform: translate(60%, -17%);
+    left: 50%;
+    transform: translate(-50%, -17%);
     font-size: 0.7em;
-    /* background: var(--white); */
+    background: var(--n-white);
     padding: .1em;
     border-radius: .3em;
     font-weight: 700;
@@ -379,9 +377,10 @@ i{
 }
 .g-product-pop-up_err-text{
     font-size: .9em;
-    color: var(--solid-pink);
+    color: var(--n-red);
     font-weight: bold;
     text-align: center;
+    padding-bottom: 1em;
 }
 
 .g-profile-body{
