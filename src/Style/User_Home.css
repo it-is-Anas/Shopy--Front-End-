@@ -242,14 +242,15 @@
 .user-cart-head-line_title{
     padding: .4em 1em;
     font-size: 1.7em;
+    font-size: 1.1em;
     font-weight: bold;
-    color: var(--solid-purple);
+    color: var(--n-black);
 }
 
 .user-cart-price-box_total{
     font-size: 1em;
     font-weight: bold;
-    color: var(--light-blue);
+    color: var(--n-red);
     margin: 0 1em 0 auto;
 }
 
