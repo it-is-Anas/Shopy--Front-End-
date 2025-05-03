@@ -542,7 +542,7 @@ i{
 .g-profile-page_tab{
     padding: .3em .4em;
     background: var(--white);
-    margin: .4em 1em;
+    margin: 5px ;
     font-size: .7em;
     /* flex: 0 0 auto; */
     font-weight: 600;
