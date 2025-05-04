@@ -1,13 +1,9 @@
 <template>
     <div class="user-cart_order ">
-        <input class="cart-order_check-box" type="checkbox" >
         <div class="cart-order_details">
             <p class="cart-order_ref">Oreder -{{ id }}- sh</p>
-            <p class="cart-order_date">{{ dayName }} {{fullDate}}  </p>
         </div>
-        <button class="user-cart_btn-sec cart-order_btn-sec">See detailes</button>
-        <button class="user-cart_btn-sec user-cart_btn-main cart-order_btn-main">Download</button>
-        <!-- <i class="fas fa-ellipsis-v cart-order_menu-btn" ></i> -->
+        <p class="cart-order_date">{{ dayName }} {{fullDate}}  </p>
     </div>
 </template>
 <script>

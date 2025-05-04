@@ -294,7 +294,7 @@
 }
 
 .user-cart_order{
-    max-width: 90%;
+    max-width: calc(100% - 1em);
     width: 60em;
     width: 100em;
     min-height: 5em;
@@ -305,6 +305,7 @@
     align-items: center;
     justify-content: space-between;
     padding: .3em 1em;
+    position: relative;
 }
 .cart-order_check-box{}
 .cart-order_details{
@@ -326,6 +327,10 @@
 .cart-order_date{
     font-size: .7em;
     /* color: var(--solid-pink); */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 7px;
 }
 
 .cart-order_menu-btn{
