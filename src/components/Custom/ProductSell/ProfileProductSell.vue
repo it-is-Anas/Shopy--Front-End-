@@ -1,8 +1,7 @@
 <template>
-    <div class="g-profile-page_product-sell">
-        <input type="checkbox" v-model="checkbox" class="">
-        <p class="g-profile-page_label-product-sell">You have sold {{ qty }} pc's of {{ productName }}</p>        
-        <i class="fas fa-ellipsis-v cart-order_menu-btn prfoile"></i>
+    <div class="user-cart_order">
+        <p class="g-profile-page_label-product-sell">You have sold {{ qty }} pc's of {{ productName }}</p> 
+        <p class="cart-order_date" v-if="createdAt" >{{ dayName }} {{fullDate}}  </p>
     </div>
 </template>
 <script>
@@ -17,14 +16,24 @@ export default {
         qty:{
             type: Number,
             default: 1,
-        }
-    },setup(){
+        },createdAt:{
+            default: null,
+            type:Date
+        }, 
+    },setup(props){
         const checkbox = ref(false);
+
+        const date = new Date(props.createdAt);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = days[date.getDay()];
+        const fullDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()} ${date.getHours()>12?'Am':'Pm'}`
 
 
 
         return{
             checkbox,
+            dayName,
+            fullDate,
         };
     }
 }

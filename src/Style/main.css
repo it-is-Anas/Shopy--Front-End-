@@ -41,7 +41,7 @@
 .err-404_img{
     width: 25em;
     height: 25em;
-}
+} 
 .err-page-404 a{
     text-decoration: none;
 }
@@ -411,25 +411,24 @@ i{
 
 .g-profile-body{
     color: var(--solid-purple);
-    width: 100dvw;
-    height: 100dvh;
-    overflow-y: scroll;
+    /* width: 100dvw;
+    height: 100dvh; */
+    /* overflow-y: scroll; */
 }
 
 .g-profile-page_user-details{
     width: 100%;
-    height: 40em;
-    max-height: 40%;
+    height: 22em;
+    /* max-height: 40%; */
     position: relative;
     display: flex;
 }
 
 .g-profile-page_cover{ 
     width: 100%;
-    /* height: 100%; */
     height: 70%;
     background-color: var(--solid-pink);
-    border-radius: .5em;
+    border-radius: 10px;
 }
 
 .g-profile-page-profile_box{
@@ -442,13 +441,13 @@ i{
 .g-profile-page-profile-box_content{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: relative; 
     display: grid;
     place-content: center;
     cursor: pointer;
 }
 .g-profile-page-profile-box_context-menu{
-    width: 9em;
+    width: 10em;
     min-height: 2em;
     background-color: var(--light-gray);
     position: absolute;
@@ -485,6 +484,8 @@ i{
     position: absolute;
     /* bottom: 1em;
     left: 1em; */
+    border-radius: 50%;
+    bottom: 3em;
 }
 .g-profile-page-profile-picture_hover{
     position: absolute;
@@ -511,8 +512,8 @@ i{
     font-size: 1.6em;
     font-weight: bold;
     position: absolute;
-    bottom: 1em;
-    left: 7.5em;
+    bottom: .5em;
+    left: 3%;
 }
 .g-profile-page_btn-box{
     /* background-color: red; */
@@ -538,6 +539,9 @@ i{
     align-content: center;
     justify-content: flex-start;
     flex-wrap: nowrap;
+}
+.g-profile-page_filter-bar.end{
+    justify-content: flex-end;
 }
 .g-profile-page_tab{
     padding: .3em .4em;
@@ -616,6 +620,7 @@ i{
 
 }
 
+/* delete this */
 .g-profile-page_product-sell{
     width: 85%;
     height: 4em;
@@ -628,11 +633,6 @@ i{
     background: var(--light-gray);
     box-shadow: 0  0 3px 0 var(--light-blue);
     margin-bottom: 1.4em;
-}
-.g-profile-page_label-product-sell{
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 0 0.5em;
 }
 .cart-order_menu-btn.prfoile{
     margin-left: auto;
@@ -781,7 +781,7 @@ i{
         display: initial;
     }
     .g-profile-page_user-details{
-        max-height: 35%;
+
     }
     .g-profile-page_profile-picture{
         left: 50%;
@@ -792,9 +792,9 @@ i{
     .g-profile-page_user-name{
         /* left: 50%;
         transform: translate(-50%); */
-        font-size: 19px;
+        /* font-size: 19px;
         bottom: .5em;
-        left: 1em;
+        left: 1em; */
     }
     .g-product-pop-up{
         width: calc(100dvw);

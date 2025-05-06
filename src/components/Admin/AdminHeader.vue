@@ -1,6 +1,6 @@
 <template>
     <header class="admin-header" > 
-        <h3 class="admin-header-logo" >Shopy</h3>
+        <HeaderLogo />
         <img @click="openMobieMenu" src="../../assets/System/Admin/Menu.png" alt="" class="admin-menu-logo">
     </header>    
     <transition name="fade" >
@@ -17,13 +17,15 @@
     </transition>
 </template>
 <script>
+    import HeaderLogo from '../Global/HeaderLogo.vue';
     import MobileMenuBtn from './MobileMenu/MobileMenuBtn.vue';
     export default {
         components:{
             MobileMenuBtn,
+            HeaderLogo,
         },data(){
             return {
-                mobileMenu: false,
+                mobileMenu: false, 
             };
         },methods:{
             openMobieMenu(){

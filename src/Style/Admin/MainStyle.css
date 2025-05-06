@@ -33,7 +33,7 @@
         align-items: center;
         justify-content: flex-start;
     position: relative;
-    background: var(--admin-light-blue);
+    background: var(--light-gray);
 }
 .admin-aside_btn{
     width: 2em;
@@ -63,7 +63,7 @@ a.router-link-active  > .admin-aside_btn{
     left: 0;
     height: 100%;
     width: 400%;
-    background-color: var(--admin-light-blue);
+    background-color: var(--light-gray);
     color: var(--admin-bold-blue);
     display: flex
     ;
@@ -105,22 +105,20 @@ a.router-link-active.admin-aside_list-chat{
 
 .admin-work_space{
     grid-row: 2/3;
-    overflow-y : scroll;
+    overflow-y : scroll; 
     overflow-x: hidden;
 }
 
 
-.admin-header{
+.admin-header{ 
     display: flex;
     align-items: center;
-    background: var(--admin-light-blue);
+    background: var(--light-gray);
     padding: .5em;
     justify-content: flex-start;
 }
 
-.admin-header-logo{
-    color: var(--admin-bold-blue);
-}
+
 .admin-menu-logo{
     margin-left: auto;
     margin-right: 1em;

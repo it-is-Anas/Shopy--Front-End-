@@ -12,7 +12,8 @@ export default {
         id:{
             default: null,
         },createdAt:{
-
+            default: null,
+            type:Date
         },
     },setup(props){
         const date = new Date(props.createdAt);

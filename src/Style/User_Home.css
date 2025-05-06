@@ -297,7 +297,7 @@
     max-width: calc(100% - 1em);
     width: 60em;
     width: 100em;
-    min-height: 5em;
+    min-height: 4.5em;
     background-color: var(--light-gray);
     margin: 1.3em auto;
     border-radius: .5em;
