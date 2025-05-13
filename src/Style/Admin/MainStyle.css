@@ -598,7 +598,7 @@ a.router-link-active.admin-fliter-box-element{
 .admin-info-label{
     font-size: 1.2em;
     font-weight: bold;
-    color: var(--solid-pink);
+    color: var(--n-purple);
 }
 
 .flex-center{
