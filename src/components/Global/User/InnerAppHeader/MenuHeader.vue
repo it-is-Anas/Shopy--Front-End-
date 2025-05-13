@@ -3,7 +3,7 @@
         <i class="fa fa-plus" @click="openProductPopUp" ></i>
         <i class="fas fa-bell g-menu-header_notification-icon" @click="toOpenNotification" >
             <p v-if="unSeenedNotifications.length != 0" class="notification-icon_number-of-notification" >{{ unSeenedNotifications.length }}</p>
-        </i>
+        </i> 
         <i class="fas fa-shopping-cart" @click="toCartPage"  ></i>
         <i class="fa fa-bars" @click="toOpenMenu" ></i> 
         <!-- create product pop up -->
@@ -38,6 +38,7 @@
                 <menu-header-btn :active="active==='order'" :label="'Order'" to="/order" />
                 <menu-header-btn :active="active==='favorate'" :label="'Favorate'" to="/favorate" />
                 <menu-header-btn :active="active==='profile'" :label="'profile'" :to="'/profile'" />
+                <menu-header-btn v-if="isAdmin" :active="active==='admin'" :label="'Admin'" :to="'/admin/home-users'" /> 
                 <menu-header-btn @click="logout" :active="active==='logout'" :label="'Log out'" to="/log-in" />
                 <div class="g-close-btn-for-mobile" @click="toCloseMenu" >+</div>
                 <teleport to='body' ><div @click="toCloseMenu" class="g-bk"></div></teleport>
@@ -47,7 +48,7 @@
 </template>
 
 <script>
-import { ref , watch , computed , onMounted } from 'vue';
+import { ref , watch , computed , onMounted } from 'vue'; 
 import { useRouter } from 'vue-router';
 import HeaderLogo from '@/components/Global/HeaderLogo.vue';
 import MenuHeaderBtn from '@/components/Custom/Buttons/MenuHeaderBtn.vue';
@@ -102,6 +103,11 @@ export default {
             createProductPopUp.value.toOpenProductPopup();
         }
 
+        const profile = computed(()=>store.getters['authStore/getSignUpProfile']);
+        if(!profile.value.email.length){
+            store.dispatch('authStore/getProfile');
+        }
+        const isAdmin = computed(()=>profile.value.isAdmin);
         return{
             openMenu,
             openNotification,
@@ -117,6 +123,7 @@ export default {
             notifications,
             makeNotificationSeen,
             unSeenedNotifications,
+            isAdmin
         };
     },
 }

@@ -13,10 +13,11 @@
     display: grid;
     grid-template-columns: 50px auto;
     grid-template-rows: 50px auto;
-    background-color: var(--admin-orange);
+    background-color: var(--n-white);
 }
 .admin-page a{
-    color: var(--admin-bold-blue);
+    color: var(--n-green);
+    border-color: var(--n-green);
     text-decoration: none   ;
 }
 
@@ -89,7 +90,7 @@ a.router-link-active  > .admin-aside_btn{
     margin-bottom: .5em;
 }
 a.router-link-active.admin-aside_list-chat{
-    background: var(--admin-white);
+    background: var(--n-white);
     /* margin-top: 1em; */
 }
 .admin-aside_chat-img{
@@ -206,21 +207,21 @@ a.router-link-active.admin-aside_list-chat{
 }
 
 .admin-fliter-box-element{
-    background: var(--admin-white);
+    background: var(--n-white);
     padding: .2em .5em;
     border-radius: 5px;
-    color: var(--admin-blue);
+    color: var(--n-green);
     margin: 0 .5em;
     font-size: .8em;
     font-weight: 600;
-    border: 2px solid var(--admin-blue);
+    border: 2px solid var(--n-green);
     cursor: pointer;
     list-style: none;
 }
 .active.admin-fliter-box-element,
 a.router-link-active.admin-fliter-box-element{
     padding: .3em   .5em;
-    background: var(--admin-blue);
+    background: var(--n-green);
     color: var(--admin-white);
     font-weight: bold;
     border: none;
@@ -326,7 +327,7 @@ a.router-link-active.admin-fliter-box-element{
 }
 
 .admin-user-card{
-    background-color: var(--admin-white);
+    background-color: var(--n-dark-white);
     margin: 0 auto;
     width: 90%;
     height: 5em;
@@ -363,11 +364,11 @@ a.router-link-active.admin-fliter-box-element{
 
 .admin-user-card-rank{
     font-size: .8em;
-    color: var(--admin-bold-blue);
+    color: var(--n-black);
 }
 
 .admin-user-card-block{
-    color: var(--admin-bold-blue);
+    color: var(--n-black);
     font-size: .8em;
 }
 
@@ -401,7 +402,7 @@ a.router-link-active.admin-fliter-box-element{
 
 .admin-user-card-context-menu{
     position: absolute;
-    background-color: var(--admin-light-blue);
+    background-color: var(--admin-white);
     min-width: 6em;
     min-height: 1em;
     right: 10px;
@@ -413,7 +414,7 @@ a.router-link-active.admin-fliter-box-element{
 }
 
 .admin-user-card-context-menu_element{
-    background: var(--admin-blue);
+    background: var(--n-green);
     padding: .5em 1em;
     color: var(--admin-white);
     font-weight: bold;
@@ -438,7 +439,7 @@ a.router-link-active.admin-fliter-box-element{
         justify-content:  space-around;
 }
 .admin-product-card{
-    background-color: var(--admin-white);
+    background-color: var(--n-dark-white);
     /* width: 11em;
     height: 15em; */
     /* padding: .3em; */
@@ -517,7 +518,7 @@ a.router-link-active.admin-fliter-box-element{
 }
 
 .admin-noti-input-box{
-    background: var(--admin-white);
+    background: var(--n-gray);
     border: none;
     outline: none;
     width: 22em;
@@ -540,8 +541,8 @@ a.router-link-active.admin-fliter-box-element{
 .admin-notification-card{
     max-width: 25em;
     width: 95%;
-    height: 5em;
-    background-color: var(--admin-white);
+    min-height: 5em;
+    background-color: var(--n-dark-white);
     border-radius: 10px;
     margin: 1em auto;
     display: flex;
@@ -567,7 +568,7 @@ a.router-link-active.admin-fliter-box-element{
     font-weight: 400;
     padding: .5em;
     width: 26em;
-    height: 4.5em;
+    min-height: 4.5em;
 }
 .admin-notification-card-date{
     position: absolute;

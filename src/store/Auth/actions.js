@@ -69,7 +69,7 @@ export default {
                 context.commit('updateProfileDateBlocked');
             }
         }
-    },async getProfile(context){
+    },async getProfile(context){ 
         context.commit('sendRequest');
         const ip = context.getters.ip.getProfile;
         const token = context.getters.getToken.token;
